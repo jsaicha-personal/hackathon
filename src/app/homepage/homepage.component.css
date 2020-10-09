@@ -1,0 +1,153 @@
+/* table, th, td {
+    border: 1px solid black;
+  margin-left: 40%;
+  }
+  *{
+      text-align: center;
+      justify-content: center;
+  }
+  section {
+    display: table;
+  }
+  
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    width: 490px;
+  }
+  
+  .example-button-row .mat-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+  mat-list-option{
+    border-right: 2px solid 	rgb(128, 57, 30);
+    border-left: 2px solid 	rgb(128, 57, 30);
+    border-top: 2px solid 	rgb(128, 57, 30);
+  }
+  mat-selection-list,mat-selection-option{
+    padding: 4%;
+   
+     
+      
+
+  }
+  .big{
+    font-size: 20px !important; 
+  }
+  mat-list-option:last-child {
+    border-bottom: 2px solid 	rgb(128, 57, 30);
+  }
+  .left{
+      float: left;
+      margin-left :40px;
+
+  }
+  .right{
+      float: left;
+      margin-left:50px;
+  }
+  button{
+      justify-content: center;
+      margin-left: 43%;
+      width: 200px;
+     margin-top: 40px;
+     margin-bottom: 50px;
+
+  }
+  .desc{
+      margin-top: 50spx;
+  } */
+
+  .h1{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 100px 10px 10px 10px;
+  }
+  .h2{
+    width: 100%;
+  }
+  .spinner{
+    justify-content: center;
+    align-items: center;
+    margin-left: 44%;
+    margin-top: 8%;
+  }
+
+.f1,.f2{
+    float: left;
+    align-items: center;
+    margin-left: 10%;
+    width: 400px;
+    text-align: center;
+  }
+  .b1{
+    float: left ;
+    margin-left: 40%;
+    margin-top: 3%;
+  }
+ mat-card{
+   text-align: center ;
+   pointer-events: auto;
+ }
+ 
+ .switch{
+   float:right;
+ }
+.f3{
+  align-content: center;
+  margin-left: 32%;
+  width: 400px;
+  text-align: center;
+}
+mat-slide-toggle{
+  margin-right: 35px;
+}
+.native{
+  margin-left:42.5%;
+}
+input{
+  text-align: center;
+}
+h4{
+  color: red;
+  justify-content: center;
+  align-content: center;
+  margin-left: 40%;
+
+}
+.b2{
+  float: left ;
+  margin-left: 41.5%;
+  margin-top: 3%;
+  width:150px;
+  color: red;
+}
+mat-card{
+ cursor: pointer;
+ 
+}
+mat-list-option {
+  text-align: center;
+}
+small{
+  color:rgb(95, 158, 160)
+}

@@ -1,0 +1,111 @@
+
+<div class="h1">
+  <mat-form-field class="f1">
+    <mat-label>Diagnostic Code Search</mat-label>
+    <input [(ngModel)]="dcode" (ngModelChange)="dcode = $event.toUpperCase()" name="dcode" matInput value=" "
+      placeholder="EX. H23.A5" #message>
+  </mat-form-field>
+
+  <mat-form-field class="f2">
+    <mat-label>Diagnostic KeyWord Search</mat-label>
+    <input [(ngModel)]="dkeyword" (ngModelChange)="dkeyword = $event.toUpperCase()" name="dkeyword" matInput value=" "
+      placeholder="EX.Key Word" #action>
+  </mat-form-field>
+  <br>
+
+</div>
+<br>
+<div> <button class="b1" mat-stroked-button (click)="submit(dcode,dkeyword)">Search Clinical Database</button>
+</div>
+
+<div> <button class="b2" mat-stroked-button (click)="reset()">Reset All</button></div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="spinner">
+  <mat-spinner *ngIf="spinner"></mat-spinner>
+
+
+</div>
+
+<h4 *ngIf="nodata">*No data availabe in Database </h4>
+
+
+<div class="h21" *ngIf="!showcard">
+  <mat-selection-list>
+    <mat-list-option *ngFor="let dcodesinglee of dcodesingle">
+      <h3 (click)="submit(dcodesinglee.Keyword_to_full_desc.DIAG_CD,'')">
+        <strong>{{dcodesinglee.Keyword_to_full_desc.DIAG_CD}}</strong> <span
+          *ngIf="dcodesinglee.Keyword_to_full_desc.DIAG_CD">-</span>
+        {{dcodesinglee.Keyword_to_full_desc.FULL_DESC}} <small>(Select one Diagnosis)</small></h3>
+    </mat-list-option>
+  </mat-selection-list>
+</div>
+
+<div class="h2" *ngIf="!showcard">
+  <mat-selection-list #shoes>
+    <mat-list-option *ngFor="let dcode of dcodes">
+      <p (click)="submit(dcode.DIAG_CD)"> <strong>{{dcode.DIAG_CD}}</strong> <span *ngIf="dcode.DIAG_CD">-</span>
+        {{dcode.FULL_DESC}}</p>
+    </mat-list-option>
+  </mat-selection-list>
+</div>
+
+
+
+
+
+<div *ngIf="showcard">
+  <mat-card (click)="getprocedures(dcodes[0].DIAG_CD)">
+    <h3 class="m"> <strong>{{dcodes[0].DIAG_CD}}</strong> - {{dcodes[0].FULL_DESC}} </h3><small>(Click the Diagnosis to
+      proceed)</small>
+  </mat-card>
+
+</div>
+
+
+<div *ngIf="progressbar">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+
+<br>
+
+<div class="switch" *ngIf="intelligentswitch">
+  <mat-slide-toggle selected (click)="intelligentoff()">Check To Turn OFF <strong>Intelligent Search</strong>
+  </mat-slide-toggle>
+
+</div>
+<br>
+<br>
+<div class="proceduresearch" *ngIf="proceduresearch">
+  <mat-form-field class="f3">
+    <mat-label>procedure Code Search</mat-label>
+    <input [(ngModel)]="pcode" (ngModelChange)="pcode = $event.toUpperCase()" name="pcode" matInput value=" "
+      placeholder="EX. H23.A5" #message>
+  </mat-form-field>
+
+</div>
+<br>
+
+<button *ngIf="proceduresearch" class="native" mat-stroked-button (click)="getprocedure(pcode)">Native Search</button>
+
+<div class="h3" *ngIf="!proceduresearch">
+  <mat-selection-list #shoes>
+    <mat-list-option *ngFor="let procedure of procedures">
+      <p> <strong>{{procedure.PROC_CD}}</strong>
+        {{procedure.cpt_full_desc_extraction.SHRT_DESC}} <small>(Select Procedures) </small></p>
+    </mat-list-option>
+  </mat-selection-list>
+</div>
+<br>
+<div class="h4" *ngIf="proceduresearch">
+  <mat-selection-list #shoes>
+    <mat-list-option *ngFor="let procedur of procedure">
+      <p> <strong>{{procedur.PROC_CD}}</strong> <span *ngIf="procedure.PROC_CD">-</span> {{procedur.SHRT_DESC}}
+        <small>(Select the Procedure)</small></p>
+    </mat-list-option>
+  </mat-selection-list>
+
+</div>
